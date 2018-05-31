@@ -19,18 +19,17 @@ $ dnf -y install golang
 ```
 
 # Build a Go application
-## Build on MacOS
+## Build with the native Go compiler
 ```bash
 $ CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' app/go/hello.go
 ```
 
-## Build on Linux
+## Build with gccgo
 ```bash
 $ go build -compiler gccgo -gccgoflags '-static' app/go/hello.go
 ```
 
 ## Execute and check
-
 ```bash
 $ ./hello &
 $ curl http://localhost:5000
